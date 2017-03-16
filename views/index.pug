@@ -1,0 +1,32 @@
+doctype html
+html
+   head
+      Title Smith Family Chat
+      link(rel="stylesheet", href="style.css")
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js")
+      script(src="script.js")
+   body
+      .topbar
+         .row
+            h1 Hello #{user}
+            img.profpic(src="pics/"+user+".jpg")
+      .chatbox
+         - for(var i=0; i< arr.length; ++i){
+            .row
+               if arr[i].sender
+                  img.pic(src="/pics/"+arr[i].sender+".jpg")
+               else
+                  .filler
+               if arr[i].sender==user
+                  p.sender='Me'
+               else
+                  p.sender=arr[i].sender
+               p.msg=arr[i].msg
+               p.time=arr[i].time
+         - }
+      .entry
+         input(class="textbox" type="text" value="")
+         button(class="btn" placeholder="Type here...") Send
+      script.
+         var person = '#{user}'
