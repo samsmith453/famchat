@@ -35,6 +35,7 @@ console.log("get");
       }).toArray(function(err, docs){
          if(err) throw err;
          var arr = docs[0].chat;
+         console.log(arr);
          var record = [];
          for(var i=1; i<arr.length; i++){
             if(arr[i].sender==arr[i-1].sender) record.push(i);
