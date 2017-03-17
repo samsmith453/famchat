@@ -32,9 +32,8 @@ app.get("/", function(req, res){
          "test": 0,
          "chat": 1
       }).toArray(function(err, docs){
-         console.log(docs);
          if(err) throw err;
-         console.log("mongo");
+         console.log(docs);
          var arr = docs[0].chat;
          var record = [];
          for(var i=1; i<arr.length; i++){
