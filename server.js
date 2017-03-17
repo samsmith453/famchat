@@ -28,8 +28,7 @@ app.get("/", function(req, res){
       collection.find({
          "test": "yes"
       },{
-         "_id": 0,
-         "test": 0,
+
          "chat": 1
       }).toArray(function(err, docs){
          if(err) throw err;
