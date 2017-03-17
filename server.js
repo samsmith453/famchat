@@ -23,8 +23,8 @@ app.set("view engine", "pug");
 app.get("/", function(req, res){
 console.log("get");
    mongo.connect(url, function(err, db){
-      console.log("mongo");
       if(err) throw err;
+      console.log("mongo");
       var collection = db.collection("history");
       collection.find({
          "test": "yes"
