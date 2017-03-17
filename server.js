@@ -24,7 +24,7 @@ app.get("/", function(req, res){
 console.log("get");
    mongo.connect(url, function(err, db){
       if(err) throw err;
-      console.log("mongo");
+
       var collection = db.collection("history");
       collection.find({
          "test": "yes"
@@ -34,8 +34,8 @@ console.log("get");
          "chat": 1
       }).toArray(function(err, docs){
          if(err) throw err;
+         console.log("mongo");
          var arr = docs[0].chat;
-         console.log("arr is:" + arr);
          var record = [];
          for(var i=1; i<arr.length; i++){
             if(arr[i].sender==arr[i-1].sender) record.push(i);
