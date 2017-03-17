@@ -21,7 +21,6 @@ app.set("views", "./views");
 app.set("view engine", "pug");
 
 app.get("/", function(req, res){
-console.log("get");
    mongo.connect(url, function(err, db){
       if(err) throw err;
 
@@ -33,6 +32,7 @@ console.log("get");
          "test": 0,
          "chat": 1
       }).toArray(function(err, docs){
+         console.log(docs);
          if(err) throw err;
          console.log("mongo");
          var arr = docs[0].chat;
