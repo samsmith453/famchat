@@ -5,7 +5,7 @@ var server = app.listen(process.env.PORT);
 var io = socket(server);
 var fs = require("fs");
 var mongo = require("mongodb").MongoClient;
-var url = "mongodb://sam453:5tb-8gx@ds133450.mlab.com:33450/smithchathistory";
+var url = "mongodb://sam453:chatpass@ds133450.mlab.com:33450/smithchathistory";
 
 var auth = require("http-auth");
 var digest = auth.digest({
