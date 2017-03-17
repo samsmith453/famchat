@@ -67,8 +67,6 @@ function files(msg){
       collection.find({
          "test": "yes"
       },{
-         "_id": 0,
-         "test": 0,
          "chat": 1
       }).toArray(function(err, docs){
          var arr = docs[0].chat;
