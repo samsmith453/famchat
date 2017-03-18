@@ -66,7 +66,6 @@ function files(msg){
       collection.find({
          "test": "yes"
       },{
-         "test": "yes",
          "chat": 1
       }).toArray(function(err, docs){
          var arr = docs[0].chat;
@@ -77,6 +76,7 @@ function files(msg){
          collection.update({
             "test": "yes"
          },{
+            "test": "yes",
             "chat": arr
          }, function(err, result){
             if(err) throw err;
